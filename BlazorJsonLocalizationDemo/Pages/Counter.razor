@@ -1,0 +1,26 @@
+﻿@page "/counter"
+@using Microsoft.Extensions.Localization
+@using SoloX.BlazorJsonLocalization
+@inject IStringLocalizer<Counter> L
+
+<PageTitle>Counter</PageTitle>
+
+<h1>@L["Counter"]</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+  private int currentCount = 0;
+
+  protected override async Task OnInitializedAsync()
+  {
+    await L.LoadAsync();
+  }
+
+  private void IncrementCount()
+  {
+    currentCount++;
+  }
+}
