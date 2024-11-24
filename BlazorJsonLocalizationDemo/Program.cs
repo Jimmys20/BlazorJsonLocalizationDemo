@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using SoloX.BlazorJsonLocalization;
 using SoloX.BlazorJsonLocalization.WebAssembly;
 
 namespace BlazorJsonLocalizationDemo
@@ -24,6 +25,16 @@ namespace BlazorJsonLocalizationDemo
                       options.ResourcesPath = "Resources";
                   });
             });
+
+            //builder.Services.AddWebAssemblyJsonLocalization(builder =>
+            //{
+            //    builder
+            //      .EnableDisplayKeysWhileLoadingAsynchronously()
+            //      .UseEmbeddedJson(options =>
+            //      {
+            //          options.ResourcesPath = "Resources";
+            //      });
+            //});
 
             await builder.Build().RunAsync();
         }
